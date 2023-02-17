@@ -3,6 +3,7 @@ import "./globals.css";
 import { useState } from "react";
 import Header from "./header";
 import { ModeContext } from "./Context/index";
+import { AnimatePresence } from "framer-motion";
 export default function RootLayout({ children }) {
   const [darkmode, setdarkmode] = useState(false);
   return (
@@ -21,9 +22,11 @@ export default function RootLayout({ children }) {
       </head>
 
       <body className="relative">
-        <ModeContext.Provider value={{darkmode}}>
-          <Header />
-          {children}
+        <ModeContext.Provider value={{ darkmode, setdarkmode }}>
+          <AnimatePresence>
+            <Header />
+            {children}
+          </AnimatePresence>
         </ModeContext.Provider>
       </body>
     </html>

@@ -1,19 +1,45 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./page.module.css";
+
 import Link from "next/link";
 import { motion as m } from "framer-motion";
+import { ModeContext } from "./Context/index";
 const Header = () => {
+  const { darkmode, setdarkmode } = useContext(ModeContext);
+  console.log("darkmode", darkmode);
   return (
     <header>
-      <div className={`pt-5 pl-7 absolute top-10 left-10 z-10`}>
+      <div
+        className={`pt-2 pl-2 md:pt-5 md:pl-7 absolute top-10 md:left-10 left-4 z-10`}
+      >
         <div className={`${styles.container}`}>
-          <h1 className="text-5xl font-thin overflow-hidden">Komail Khan</h1>
-          <p className={styles.typewriter}>Full Stack Developer</p>
+          <h1
+            className={` ${
+              darkmode ? "text-white" : "text-black"
+            } text-5xl font-thin overflow-hidde`}
+          >
+            Komail Khan
+          </h1>
+          <p
+            className={` ${styles.typewriter} ${
+              darkmode ? "text-white" : "text-black"
+            }`}
+          >
+            Full Stack Developer
+          </p>
         </div>
         <div className="ml-1 mt-16 ">
-          <div className=" bg-black rounded-full w-3 h-3"></div>
-          <ul className="mt-4">
+          <div
+            className={`${
+              darkmode ? "bg-white" : "bg-black"
+            } rounded-full w-3 h-3`}
+          ></div>
+          <ul
+            className={`${
+              darkmode ? "text-white" : "text-black"
+            } mt-4 cursor-pointer`}
+          >
             <m.li
               className="mt-1"
               initial={{ x: "20%", opacity: 0 }}
@@ -47,14 +73,32 @@ const Header = () => {
           </ul>
         </div>
       </div>
-      <div className="absolute bottom-20 left-10  flex flex-col z-20 ">
-        <div className="text-black flex row mb-7 items-center justify-center rotate-90">
+      <div className="absolute md:bottom-20 md:left-10 left-2 bottom-20 flex flex-col z-20 ">
+        <div
+          className={` ${
+            darkmode ? "text-white" : "text-black"
+          } flex row mb-7 items-center justify-center rotate-90 cursor-pointer`}
+        >
           Light
-          <div className="w-3 h-3 ml-2 border-solid border border-black "></div>
+          <div
+            className={`${
+              !darkmode ? "bg-black border-black" : "border-white"
+            } w-3 h-3 ml-2 border-solid border `}
+            onClick={() => setdarkmode(false)}
+          ></div>
         </div>
-        <div className="text-blacktext-black flex mt-5 row items-center justify-center rotate-90">
+        <div
+          className={`${
+            darkmode ? "text-white" : "text-black"
+          } text-black flex mt-5 row items-center justify-center rotate-90 cursor-pointer`}
+        >
           Dark
-          <div className="w-3 h-3 ml-2 border-solid border border-black "></div>
+          <div
+            className={`${
+              darkmode ? "bg-white border-white" : "border-black"
+            } w-3 h-3 ml-2 border-solid border `}
+            onClick={() => setdarkmode(true)}
+          ></div>
         </div>
       </div>
     </header>
