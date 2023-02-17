@@ -24,7 +24,9 @@ const page = () => {
   ];
   return (
     <m.main
-      className={`${darkmode ? "bg-black" : "bg-theme"}  p-4 md:p-8 h-screen`}
+      className={`${
+        darkmode ? "bg-black" : "bg-theme"
+      }  overflow-x-scroll overflow-y-scroll md:overflow-hidden p-4 md:p-8 h-screen`}
       // initial={{ opacity: 0.8 }}
       // animate={{ opacity: 1 }}
       // transition={{ duration: 2.5, ease: "easeOut" }}
