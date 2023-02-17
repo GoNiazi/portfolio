@@ -33,7 +33,7 @@ const page = () => {
       <div
         className={` ${
           darkmode ? "bg-gray-800" : "bg-slate-100"
-        } border-solid border border-zinc-500 shadow-sm h-full bg-opacity-60 bg-clip-padding overflow-x-scroll md:overflow-hidden`}
+        } border-solid border border-zinc-500 shadow-sm h-full bg-opacity-60 bg-clip-padding overflow-x-scroll overflow-y-scroll md:overflow-hidden`}
         style={{ backdropFilter: "blur(20px)" }}
       >
         <m.div
