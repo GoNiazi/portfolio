@@ -17,19 +17,19 @@ const Header = () => {
           <h1
             className={` ${
               darkmode ? "text-white" : "text-black"
-            } text-5xl font-thin overflow-hidde`}
+            } text-2xl md:text-5xl font-thin overflow-hidden`}
           >
             Komail Khan
           </h1>
           <p
             className={` ${styles.typewriter} ${
               darkmode ? "text-white" : "text-black"
-            }`}
+            } text-sm md:text-base`}
           >
             Full Stack Developer
           </p>
         </div>
-        <div className="ml-1 mt-16 ">
+        <div className="ml-1 md:mt-16 mt-8">
           <div
             className={`${
               darkmode ? "bg-white" : "bg-black"
@@ -77,7 +77,7 @@ const Header = () => {
         <div
           className={` ${
             darkmode ? "text-white" : "text-black"
-          } flex row mb-7 items-center justify-center rotate-90 cursor-pointer`}
+          } flex row mb-7 items-center justify-center rotate-90 cursor-pointer text-sm md:text-base`}
         >
           Light
           <div
@@ -90,7 +90,7 @@ const Header = () => {
         <div
           className={`${
             darkmode ? "text-white" : "text-black"
-          } text-black flex mt-5 row items-center justify-center rotate-90 cursor-pointer`}
+          } text-black flex mt-5 row items-center justify-center rotate-90 cursor-pointer text-sm md:text-base`}
         >
           Dark
           <div

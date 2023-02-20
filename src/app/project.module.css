@@ -1,0 +1,26 @@
+.app{
+    margin: 10% 20%;
+}
+.carousel{
+    cursor: grab;
+    overflow:hidden;
+    /* background-color: red; */
+}
+.innerc{
+    display:flex;
+    /* background-color:blue ; */
+}
+
+.item{
+    min-height: 40rem;
+    min-width: 20rem;
+    padding: 40px;
+
+}
+.project{
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    pointer-events: none;
+    border:2px solid red ;
+}
