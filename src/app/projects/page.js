@@ -4,6 +4,7 @@ import { motion as m } from "framer-motion";
 import React, { useState, useEffect, useRef, useContext } from "react";
 
 import { ModeContext } from "../Context/index";
+import Image from "next/image";
 const page = () => {
   const { darkmode, setdarkmode } = useContext(ModeContext);
   const [showModal, setShowModal] = React.useState(false);
@@ -42,28 +43,15 @@ const page = () => {
               className=" flex h-12/12 w-12/12  flex-row cursor-grab "
             >
               {projects.map((project) => {
+                console.log(project.images[0]);
                 return (
                   <div className="h-5/6 w-4/6 p-10 ">
                     <div className="w-full h-full rounded border-solid border-green-400 border-2">
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
-                      <p>{project.title}</p>
+                      <Image
+                        src={`${project?.images[0]}.PNG`}
+                        height="200"
+                        width="200"
+                      />
                       <p>{project.title}</p>
                     </div>
                   </div>
